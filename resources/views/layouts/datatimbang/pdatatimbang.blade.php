@@ -27,8 +27,10 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @php $no = 1; @endphp
-                    {{-- @foreach($data as $datas)
+                    @php
+                        $no = 1; 
+                    @endphp
+                    @foreach($data as $datas)
                     <tr>
                         <td>{{ $no++ }}</td>
                         <td>{{ $datas->nama_anak }}</td>
@@ -40,19 +42,19 @@
                         <td>{{ $datas->status_gizi }}</td>
                         <td>{{ $datas->ket_timbang }}</td>
                         <td>
-                            <!-- <form action="{{ route('timbang.destroy', $datas->id_timbang) }}" method="post">
+                            <!-- <form action="{{ route('tanak.destroy', $datas->id_timbang) }}" method="post">
                                 {{ csrf_field() }}
                                 {{ method_field('DELETE') }} -->
                                 <div class="btn-group">
-                                    <a href="{{ route('timbang.edit', $datas->id_timbang) }}" class=" btn btn-sm btn-warning" data-toggle="tooltip" title="Edit"><span class="glyphicon glyphicon-edit"></span></a>
+                                    <a href="{{ route('tanak.edit', $datas->id_timbang) }}" class=" btn btn-sm btn-warning" data-toggle="tooltip" title="Edit"><span class="glyphicon glyphicon-edit"></span></a>
                                     <!-- <button class="btn btn-sm btn-danger" type="submit" onclick="return confirm('Yakin ingin menghapus data?')" data-toggle="tooltip" title="Hapus"><span class="glyphicon glyphicon-trash"></span></button> -->
                                 </div>
                             <!-- </form> -->
                         </td>
                     </tr>
-                    @endforeach --}}
+                    @endforeach
                 </tbody>
-                {{-- <tfoot>
+                <tfoot>
                     <tr>
                         <th>#</th>
                         <th>Nama Anak</th>
@@ -63,7 +65,7 @@
                         <th>Keterangan</th>
                         <th>Aksi</th>
                     </tr>
-                </tfoot> --}}
+                </tfoot>
             </table>
         </div>
     </div>

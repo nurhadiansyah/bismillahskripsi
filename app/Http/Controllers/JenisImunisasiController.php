@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use app\Models\jenisimunisasi;
+use App\Models\Jenisimunisasi;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\DB;
 
@@ -17,9 +17,10 @@ class JenisImunisasiController extends Controller
     public function index()
     {
         $data = DB::table('jenisimunisasi')
+                ->orderBy('umur', 'asc')
                 ->get();
 
-        return view('layouts.jenisimunisasi.mjenisimunisasi');
+        return view('layouts.jenisimunisasi.mjenisimunisasi',  compact('data'));
     }
 
     /**
@@ -40,12 +41,12 @@ class JenisImunisasiController extends Controller
      */
     public function store(Request $request)
     {
-        $data             = new jenisimunisasi;
+        $data             = new Jenisimunisasi;
         $data->nama_imun  = $request->get('nama_imun');
         $data->umur       = $request->get('umur');
         $data->save();
 
-        return redirect()->route('jimunisasi.index');
+        return redirect()->route('Jimunisasi.index');
     }
 
     /**
@@ -90,6 +91,9 @@ class JenisImunisasiController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data = Jenisimunisasi::where('id_j_imun', $id)->first();
+        $data->delete();
+        return redirect()->route('Jimunisasi.index')->with(['success' => 'Data Berhasil Di Hapus']);
     }
+    
 }

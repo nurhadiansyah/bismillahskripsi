@@ -69,7 +69,7 @@
                         <a class="collapse-item"  href="ibus"> <span> Data Ibu </span></a>
                         <a class="collapse-item" href="anaks"><span> Anak</span></a>
                         <a class="collapse-item" href="Jimunisasi">Jenis Imunisasi</a>
-                        <a class="collapse-item" href="datakaders">Data Kader</a>
+                        {{-- <a class="collapse-item" href="datakaders">Data Kader</a> --}}
                     </div>
                 </div>
             </li>
@@ -84,8 +84,8 @@
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="tanak">timbang anak</a>
-                        <a class="collapse-item" href="datatimbang">data timbang</a>
+                        <a class="collapse-item" href="{{route('tanak.create')}}">timbang anak</a>
+                        <a class="collapse-item" href="tanak">data timbang</a>
                     </div>
                 </div>
             </li>
