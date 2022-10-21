@@ -131,14 +131,7 @@
                                     </tr>
                                     @endforeach
                                 </tbody>
-                                <tfoot>
-                                    <tr>
-                                        <th>#</th>
-                                        <th>Nama Imunisasi</th>
-                                        <th>Umur</th>
-                                        <th>Aksi</th>
-                                    </tr>
-                                </tfoot>
+                                
                             </table>
                         </div>
                         <!-- /.box-body -->

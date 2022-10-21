@@ -19,6 +19,12 @@
                 </span>
                 <span class="text">tambah data</span>
             </a>
+            <a href="anaks/CetakAnak" class="btn btn-primary btn-icon-split">
+                <span class="icon text-white-50">
+                    <i class="fas fa-print"></i>
+                </span>
+                <span class="text">cetak data</span>
+            </a>
         </div>
         <div class="card-body">
             <div class="table-responsive">

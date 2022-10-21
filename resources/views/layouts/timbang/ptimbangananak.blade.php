@@ -25,10 +25,10 @@
                             <div class="input-group col-md-10">
                                 <div class="input-group">
                                     <span class="input-group-text"><i class="fa fa-child fa-fw"></i></span>
-                                    <select class="form-control select2" name="id_anak" style="width: 100%;" required>
+                                    <select class="form-control select2" name="id_anak" " required>
                                         <option selected="selected" value="">-- Nama Anak --</option>
                                         @foreach($dataCreate as $datas)
-                                            <option value="{{ $datas->id_anak }}">{{ $datas->nama_anak }} - {{ $datas->nama_ibu }} & {{ $datas->nama_suami }}</option>
+                                            <option value="{{ $datas->id_anak }}"> {{ $datas->nama_anak }} - {{ $datas->nama_ibu }} & {{ $datas->nama_suami }} </option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -59,6 +59,7 @@
                             <label class="col-md-2 control-label" for="name"></label>
                             <div class="input-group col-md-8">
                                 <button type="submit" class="btn btn-primary" style="margin-right: 6px;">Simpan</button>
+                                <a href="{{ route('tanak.index')}}" class="btn btn-danger">Batal</a>
                             </div>
                         </div>
                     </div>
@@ -68,51 +69,51 @@
         </div>
     </div>
 </div>
-        </div>
-    </div>
-</div>
-</div>
 
-<div class="panel-body">
-    <div class="container">
-        <div class="row">
-            <div class="box-body">
-                <div class="box-group" id="accordion">
-                    <!-- we are adding the .panel class so bootstrap.js collapse plugin detects it -->
-                    <div class="panel box box-primary">
-                        <div class="box-header with-border">
-                            <h4 class="box-title">
-                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-                                    Grafik KMS
-                                </a>
-                            </h4>
-                        </div>
-                        <div id="collapseOne" class="panel-collapse collapse in">
-                            <div class="box-body">
-                                @if (Session::has('dataKelamin'))
-                                    @if(Session::get('dataKelamin') == 1)
-                                        <div id="grafik_female" style="height: 700px">
-                                            <!-- view grafik -->
-                                        </div>
-                                    @else
-                                        <div id="grafik_male" style="height: 700px">
-                                            <!-- view grafik -->
-                                        </div>
-                                    @endif
-                                @else
-                                    <div style="text-align: center;">
-                                        <p>Grafik Tumbuh Kembang Anak</p>
-                                    </div>
-                                @endif
+
+{{-- grafik kms --}}
+
+<div class="box box-solid">
+    <!-- /.box-header -->
+    <div class="box-body">
+        <div class="box-group" id="accordion">
+            <!-- we are adding the .panel class so bootstrap.js collapse plugin detects it -->
+            <div class="panel box box-primary">
+                <div class="box-header with-border">
+                    <h4 class="box-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                            Grafik KMS
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse in">
+                    <div class="box-body">
+                        @if (Session::has('dataKelamin'))
+                            @if(Session::get('dataKelamin') == 1)
+                                <div id="grafik_female" style="height: 700px">
+                                    <!-- view grafik -->
+                                </div>
+                            @else
+                                <div id="grafik_male" style="height: 700px">
+                                    <!-- view grafik -->
+                                </div>
+                            @endif
+                        @else
+                            <div style="text-align: center;">
+                                <p>Grafik Tumbuh Kembang Anak</p>
                             </div>
-                        </div>
+                        @endif
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <!-- /.box-body -->
 </div>
 
+@endsection
+
+@section('java')
 <!-- bootstrap datepicker -->
 <script src="{!! asset('bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js') !!}"></script>
 <!-- Select2 -->
@@ -488,5 +489,4 @@
         });
     })
 </script>
-
 @endsection

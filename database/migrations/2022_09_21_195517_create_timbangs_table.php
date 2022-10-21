@@ -33,7 +33,7 @@ class CreateTimbangsTable extends Migration
             $table->string('alasan_gibur')->nullable();
             $table->string('tindakan')->nullable();
             $table->timestamps();
-            $table->foreign('id_anak')->references('id_anak')->on('anaks');
+            $table->foreign('id_anak')->references('id_anak')->on('dataanaks');
         });
     }
 

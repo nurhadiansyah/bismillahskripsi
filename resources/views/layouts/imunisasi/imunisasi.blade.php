@@ -12,7 +12,7 @@
     <div class="card shadow mb-4">
         <div class="card-header py-3">
             <h6 class="m-0 font-weight-bold text-primary">Imunisasi</h6>
-            <a href="createimunisasi" class="btn btn-primary btn-icon-split">
+            <a href="Imunisasis/create" class="btn btn-primary btn-icon-split">
                 <span class="icon text-white-50">
                     <i class="fas fa-plus"></i>
                 </span>
@@ -35,6 +35,30 @@
                             </tr>
                         </tr>
                     </thead>
+                    <tbody>
+                        @php $no = 1; @endphp
+                        @foreach($data as $datas)
+                        @csrf
+                        <tr>
+                            <td>{{ $no++ }}</td>
+                            <td>{{ $datas->nama_anak }}</td>
+                            <td>{{ $datas->nama_imun }}</td>
+                            <td>{{ $datas->tgl_imun }}</td>
+                            <td>{{ $datas->booster }}</td>
+                            <td>{{ $datas->ket_imun }}</td>
+                            <td>
+                                <form action="{{ route('Imunisasis.destroy', $datas->id_imun) }}" method="post">
+                                    {{ csrf_field() }}
+                                    {{ method_field('DELETE') }}
+                                    <div class="btn-group">
+                                        <a href="{{ route('Imunisasis.edit', $datas->id_imun) }}" class=" btn btn-sm btn-warning" data-toggle="tooltip" title="Edit"><span class="glyphicon glyphicon-edit"></span></a>
+                                        <button class="btn btn-sm btn-danger" type="submit" onclick="return confirm('Yakin ingin menghapus data?')" data-toggle="tooltip" title="Hapus"><span class="glyphicon glyphicon-trash"></span></button>
+                                    </div>
+                                </form>
+                            </td>
+                        </tr>
+                        @endforeach
+                    </tbody>
                     {{-- <tfoot>
                         <tr>
                             <th>Name</th>

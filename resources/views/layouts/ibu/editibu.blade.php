@@ -191,7 +191,7 @@
                             <label class="col-md-4 control-label" for="name"></label>
                             <div class="input-group col-md-8">
                                 <button type="submit" class="btn btn-primary" style="margin-right: 6px;">update</button>
-                                <a href="ibus.index" class="btn btn-danger">Batal</a>
+                                <a href="/ibus" class="btn btn-danger">Batal</a>
                             </div>
                         </div>
                     </div>

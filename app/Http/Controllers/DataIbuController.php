@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Dataibu;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Illuminate\Routing\Redirector;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Str;
 
 class DataIbuController extends Controller
 {
@@ -92,9 +93,10 @@ class DataIbuController extends Controller
      */
     public function edit($id)
     {
-        $data = Dataibu::where('id', $id)->get();
+        $data = DB::table('users')
+        ->where('id', $id)->get();
 
-        return redirect()->view('layouts.ibu.editibu', compact('data'));
+        return view('layouts.ibu.editibu', compact('data'));
         //return view('layouts.ibu.editibu', compact('data'));
     }
     

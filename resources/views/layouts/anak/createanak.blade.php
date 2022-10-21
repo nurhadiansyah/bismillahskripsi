@@ -101,7 +101,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group form-inline">
+                        <div class="form-group form-inline ">
                             <div class="row">
                                 <label class="col-md-2 control-label text-right" for="alamat2">Bersalin</label>
                                 <div class="input-group col-md-10">

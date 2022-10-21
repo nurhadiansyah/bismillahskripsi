@@ -23,12 +23,13 @@ class DataAnakController extends Controller
 
         return view ('layouts.anak.mdataanak',compact('data'));
     }
-
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+         * Show the form for creating a new resource.
+         *
+         * @return \Illuminate\Http\Response
+         */
+    
+    
     public function create()
     {
         $data = DB :: table('users')->select('id', 'nama_ibu', 'nama_suami')
@@ -134,4 +135,14 @@ class DataAnakController extends Controller
         $data->delete();
         return redirect()->route('anaks.index')->with(['success' => 'Data Berhasil Di Hapus']);
     }
+
+    public function CetakAnak()
+    {
+        $data = DB::table('dataanaks as A')
+                ->leftjoin('users as I', 'I.id', '=', 'A.id_ibu')
+                ->get();
+
+        return view ('layouts.anak.cetakanak',compact('data'));
+    }
+    
 }

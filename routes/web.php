@@ -29,7 +29,7 @@ use App\Http\Controllers\JenisImunisasiController;
 Route::get('/', function () {
     return view('layouts/master');
 });
-\
+
 //master data penjalur
 Route::get('masterdataibu', function () { return view('layouts.ibu.mdataibu');});
 Route::get('masterdataanak', function () { return view('layouts.anak.mdataanak');});
@@ -54,7 +54,6 @@ Route::get('createkader', function () { return view('layouts.kader.createkader')
 Route::get('creatimunisasi', function () { return view('layouts.imunisasi.createimunisasi');});
 
 //controler
- 
 Route::resource('ibus', DataIbuController::class);
 Route::resource('anaks', DataAnakController::class);
 Route::resource('Jimunisasi', JenisImunisasiController::class);
@@ -62,6 +61,9 @@ Route::resource('datakaders', DataKadercontroller::class);
 
 
 Route::resource('tanak', TimbangAnakController::class);
-Route::resource('Imunsasis', ImunisasiController::class);
+Route::resource('Imunisasis', ImunisasiController::class);
 Route::resource('duser', DataUserController::class);
 
+// route untuk cetak
+
+Route::get('cetakanak','DataAnakController@CetakAnak')->name('cetakanak');

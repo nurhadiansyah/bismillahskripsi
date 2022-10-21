@@ -20,13 +20,12 @@
                             <span class="input-group-text"><i class="fa fa-child"></i></span>
                             <select class="form-control select2 col-md-5" name="form" style="width: 100%;" required>
                                 <option selected="selected" value="">-- Pilihan Cetak --</option>
-                                <option value="form1">Form 1 - Laporan Bulanan Pelayanan Gizi</option>
-                                <option value="form2">Form 2 - Data Balita Tidak Hadir</option>
-                                <option value="form3">Form 3 - Balita Gizi Buruk</option>
-                                <option value="form4">Form 4 - Balita 2T dan BGM</option>
-                                <option value="form5">Form 5 - Balita Gizi Lebih</option>
-                                <option value="form6">Form 6 - Pemberian Vitamin A</option>
-                                <option value="form7">Form 7 - Dokumentasi Kegiatan</option>
+                                <option value="form1">Form 1 - DATA IBU</option>
+                                <option value="form2">Form 2 - DATA ANAK</option>
+                                <option value="form3">Form 3 - JENIS IMUNISASI</option>
+                                <option value="form4">Form 4 - DATA TIMBANG</option>
+                                <option value="form5">Form 5 - DATA IMUNISASI</option>
+                                <
                             </select>
                         </div>
                     </div>

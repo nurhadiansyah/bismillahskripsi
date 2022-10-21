@@ -23,6 +23,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://kit.fontawesome.com/dcd0634efd.js" crossorigin="anonymous"></script>
 
+    <!-- PWA  -->
+    <meta name="theme-color" content="#6777ef"/>
+    <link rel="apple-touch-icon" href="{{ asset('logo.PNG') }}">
+    <link rel="manifest" href="{{ asset('/manifest.json') }}">
+
 </head>
 
 <body id="page-top">
@@ -66,9 +71,9 @@
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item"  href="ibus"> <span> Data Ibu </span></a>
-                        <a class="collapse-item" href="anaks"><span> Anak</span></a>
-                        <a class="collapse-item" href="Jimunisasi">Jenis Imunisasi</a>
+                        <a class="collapse-item"  href="/ibus"> <span> Data Ibu </span></a>
+                        <a class="collapse-item" href="/anaks"><span> Anak</span></a>
+                        <a class="collapse-item" href="/Jimunisasi">Jenis Imunisasi</a>
                         {{-- <a class="collapse-item" href="datakaders">Data Kader</a> --}}
                     </div>
                 </div>
@@ -85,7 +90,7 @@
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item" href="{{route('tanak.create')}}">timbang anak</a>
-                        <a class="collapse-item" href="tanak">data timbang</a>
+                        <a class="collapse-item" href="/tanak">data timbang</a>
                     </div>
                 </div>
             </li>
@@ -100,24 +105,31 @@
 
             <!-- Nav Item - Charts -->
             <li class="nav-item">
-                <a class="nav-link" href="imunisasi">
+                <a class="nav-link" href="/Imunisasis">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>imunisasi</span></a>
             </li>
+            {{-- <li class="nav-item">
+                <a class="nav-link" href="/duser">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span> agenda</span></a>
+            </li> --}}
 
             <!-- Nav Item - Tables -->
-            <li class="nav-item">
-                <a class="nav-link" href="laporan">
+            {{-- <li class="nav-item">
+                <a class="nav-link" href="/laporan">
                     <i class="fas fa-fw fa-table"></i>
                     <span>laporan</span></a>
-            </li>
+            </li> --}}
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="duser">
+                <a class="nav-link" href="/duser">
                     <i class="fas fa-fw fa-table"></i>
                     <span> data user</span></a>
             </li>
+
+            
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
@@ -150,7 +162,7 @@
                     </button>
 
                     <!-- Topbar Search -->
-                    <form
+                    {{-- <form
                         class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                         <div class="input-group">
                             <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
@@ -161,10 +173,10 @@
                                 </button>
                             </div>
                         </div>
-                    </form>
+                    </form> --}}
 
                     <!-- Topbar Navbar -->
-                    <ul class="navbar-nav ml-auto">
+                    {{-- <ul class="navbar-nav ml-auto">
 
                         <!-- Nav Item - Search Dropdown (Visible Only XS) -->
                         <li class="nav-item dropdown no-arrow d-sm-none">
@@ -188,10 +200,10 @@
                                     </div>
                                 </form>
                             </div>
-                        </li>
+                        </li> --}}
 
                         <!-- Nav Item - Alerts -->
-                        <li class="nav-item dropdown no-arrow mx-1">
+                        {{-- <li class="nav-item dropdown no-arrow mx-1">
                             <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-bell fa-fw"></i>
@@ -239,10 +251,10 @@
                                 </a>
                                 <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
                             </div>
-                        </li>
+                        </li> --}}
 
                         <!-- Nav Item - Messages -->
-                        <li class="nav-item dropdown no-arrow mx-1">
+                        {{-- <li class="nav-item dropdown no-arrow mx-1">
                             <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-envelope fa-fw"></i>
@@ -307,10 +319,10 @@
                             </div>
                         </li>
 
-                        <div class="topbar-divider d-none d-sm-block"></div>
+                        <div class="topbar-divider d-none d-sm-block"></div> --}}
 
                         <!-- Nav Item - User Information -->
-                        <li class="nav-item dropdown no-arrow">
+                        <li class="nav-item dropdown no-arrow" >
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
@@ -412,8 +424,67 @@
     <!-- Page level custom scripts -->
     <script src="{{asset('template/js/demo/chart-area-demo.js')}}"></script>
     <script src="{{asset('template/js/demo/chart-pie-demo.js')}}"></script>
+    
+     <!-- jQuery 3 -->
+     <script src="{!! asset('bower_components/jquery/dist/jquery.min.js') !!}"></script>
+     <!-- jQuery UI 1.11.4 -->
+     <script src="{!! asset('bower_components/jquery-ui/jquery-ui.min.js') !!}"></script>
+     <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+     <script>
+         $.widget.bridge('uibutton', $.ui.button);
+     </script>
+     <!-- Bootstrap 3.3.7 -->
+     <script src="{!! asset('bower_components/bootstrap/dist/js/bootstrap.min.js') !!}"></script>
+     <!-- Sparkline -->
+     <script src="{!! asset('bower_components/jquery-sparkline/dist/jquery.sparkline.min.js') !!}"></script>
+     <!-- jvectormap -->
+     <script src="{!! asset('plugins/jvectormap/jquery-jvectormap-1.2.2.min.js') !!}"></script>
+     <script src="{!! asset('plugins/jvectormap/jquery-jvectormap-world-mill-en.js') !!}"></script>
+     <!-- jQuery Knob Chart -->
+     <script src="{!! asset('bower_components/jquery-knob/dist/jquery.knob.min.js') !!}"></script>
+     <!-- daterangepicker -->
+     <script src="{!! asset('bower_components/moment/min/moment.min.js') !!}"></script>
+     <script src="{!! asset('bower_components/bootstrap-daterangepicker/daterangepicker.js') !!}"></script>
+     <!-- datepicker -->
+     <script src="{!! asset('bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js') !!}"></script>
+     <!-- Bootstrap WYSIHTML5 -->
+     <script src="{!! asset('plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js') !!}"></script>
+     <!-- Slimscroll -->
+     <script src="{!! asset('bower_components/jquery-slimscroll/jquery.slimscroll.min.js') !!}"></script>
+     <!-- FastClick -->
+     <script src="{!! asset('bower_components/fastclick/lib/fastclick.js') !!}"></script>
+     <!-- AdminLTE App -->
+     <script src="{!! asset('dist/js/adminlte.min.js') !!}"></script>
+     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+     <!-- <script src="{!! asset('dist/js/pages/dashboard.js') !!}"></script> -->
+     <!-- AdminLTE for demo purposes -->
+     <!-- <script src="{!! asset('dist/js/demo.js') !!}"></script> -->
+ 
+     <script>
+         /** tambah class active jika di klik */
+         var url = window.location;
+         // ini untuk menambahkan class active pada menu yg tidak memiliki anak atau single link
+         $('ul.sidebar-menu a').filter(function() {
+             return this.href == url;
+         }).parent().addClass('active');
+         // ini untuk menu beranak, jadi otomatis akan terbuka sesuai dengan link tujuan
+         $('ul.treeview-menu a').filter(function() {
+             return this.href == url;
+         }).parentsUntil(".sidebar-menu > .treeview-menu").addClass('active');
+     </script>
+ 
 
+    {{-- PWA  --}}
+    <script src="{{ asset('/sw.js') }}"></script>
+    <script>
+        if (!navigator.serviceWorker.controller) {
+            navigator.serviceWorker.register("/sw.js").then(function (reg) {
+                console.log("Service worker has been registered for scope: " + reg.scope);
+            });
+        }
+    </script>
 
+@yield('java')
 </body>
 
 </html>
