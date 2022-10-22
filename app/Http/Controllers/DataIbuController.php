@@ -82,7 +82,11 @@ class DataIbuController extends Controller
      */
     public function show($id)
     {
-        //
+        $data = DB::table('users')
+        // ->where('jabatan', '=', 0)
+        ->get();
+
+        return view('layouts.ibu.cetakibu', compact('data'));
     }
 
     /**

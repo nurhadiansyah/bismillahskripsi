@@ -74,7 +74,14 @@ class ImunisasiController extends Controller
      */
     public function show($id)
     {
-        //
+        $data = DB::table('imunisasi as M')
+        ->leftjoin('dataanaks as A', 'M.id_anak', '=', 'A.id_anak')
+        ->leftjoin('users as I', 'A.id_ibu', '=', 'I.id')
+        ->leftjoin('jenisimunisasi as J', 'M.id_j_imun', '=', 'J.id_j_imun')
+        ->select('M.id_imun', 'A.nama_anak', 'J.nama_imun', 'M.tgl_imun', 'M.booster', 'M.ket_imun')
+        ->orderBy('id_imun', 'asc')
+        ->get();
+        return view ('layouts.imunisasi.cetakimunisasi', compact('data'));
     }
 
     /**

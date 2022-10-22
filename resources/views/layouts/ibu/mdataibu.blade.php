@@ -17,7 +17,14 @@
                 <span class="icon text-white-50">
                     <i class="fas fa-plus"></i>
                 </span>
-                <span class="text">tambah data</span></a>
+                <span class="text">tambah data</span>
+            </a>
+            <a href="ibus/show" target="_blank" class="btn btn-primary btn-icon-split">
+                <span class="icon text-white-50">
+                    <i class="fas fa-print"></i>
+                </span>
+                <span class="text">Print</span>
+            </a>
         </div>
         <div class="card-body">
             <div class="table-responsive">
@@ -25,12 +32,13 @@
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>nama ibu</th>
-                            <th>nama ayah</th>
-                            <th>alamat</th>
-                            <th>No Bpjs</th>
-                            <th>status gakin</th> 
+                            <th>Nama Ibu</th>
+                            <th>Aama Ayah</th>
+                            <th>Alamat</th>
+                            <th>No BPJS</th>
+                            <th>Status Gakin</th> 
                             <th>Aksi</th>
+                            
                         </tr>
                     </thead>
                     <tbody>
@@ -69,7 +77,7 @@
                         </tr>
                         @endforeach
                     </tbody>
-                    <tfoot>
+                    {{-- <tfoot>
                         <tr>
                             <th>No</th>
                             <th>nama ibu</th>
@@ -79,7 +87,7 @@
                             <th>Status gakin</th>
                             <th>Aksi</th>
                         </tr>
-                    </tfoot>
+                    </tfoot> --}}
                     
                 </table>
             </div>

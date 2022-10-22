@@ -63,5 +63,8 @@
     <p>yuni hartika</p>
     </div>
     </div>
+    <script type="text/javascript">
+        window.print();s
+    </script>
 </body>
 </html>

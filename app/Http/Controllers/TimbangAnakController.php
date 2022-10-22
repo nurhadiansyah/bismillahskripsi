@@ -1568,7 +1568,19 @@ class TimbangAnakController extends Controller
      */
     public function show($id)
     {
-        //
+        date_default_timezone_set('Asia/Jakarta');
+        $nm = Carbon::now()->format('m'); // Tanggal sekarang bulan
+        $nY = Carbon::now()->format('Y'); // Tanggal sekarang tahun
+        $data = DB::table('timbangs as T')
+                ->leftjoin('dataanaks as A', 'T.id_anak', '=', 'A.id_anak')
+                ->whereMonth('T.tgl_timbang', $nm)
+                ->whereYear('T.tgl_timbang', $nY)
+                ->get();
+        $data2 = DB::table('timbangs as T')
+                ->leftjoin('dataanaks as A', 'T.id_anak', '=', 'A.id_anak')
+                ->get();
+       
+        return view('layouts.datatimbang.cetakdatatimbang', compact('data','data2'));
     }
 
     /**
