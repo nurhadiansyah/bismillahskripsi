@@ -19,7 +19,7 @@
                 </span>
                 <span class="text">tambah data</span>
             </a>
-            <a href="anaks/CetakAnak" class="btn btn-primary btn-icon-split">
+            <a href="anaks/show" class="btn btn-primary btn-icon-split">
                 <span class="icon text-white-50">
                     <i class="fas fa-print"></i>
                 </span>

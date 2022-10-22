@@ -66,4 +66,4 @@ Route::resource('duser', DataUserController::class);
 
 // route untuk cetak
 
-Route::get('cetakanak','DataAnakController@CetakAnak')->name('cetakanak');
+// Route::get('cetakanak','DataAnakController@CetakAnak')->name('cetakanak');

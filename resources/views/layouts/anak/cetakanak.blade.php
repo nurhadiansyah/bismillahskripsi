@@ -18,29 +18,29 @@
             <thead>
                 <tr>
                     <th style="width: 5%; text-align: center;">No</th>
-                    <th style="width: 20%; text-align: center;">Nama Anak</th>
-                    <th style="width: 35%; text-align: center;">Orang Tua</th>
-                    <th style="width: 12%; text-align: center;">Jenis Kelamin</th>
+                    <th style="width: 25%; text-align: center;">Nama Anak</th>
+                    <th style="width: 20%; text-align: center;">Orang Tua</th>
+                    <th style="width: 15%; text-align: center;">Jenis Kelamin</th>
                     <th style="width: 10%; text-align: center;">Tgl Lahir</th>
-                    <th style="width: 3%; text-align: center;">KMS</th>
+                    <th style="width: 25%; text-align: center;">KMS</th>
                 </tr>
             </thead>
             <tbody>
                 @php $no = 1; @endphp
                 @foreach($data as $datas)
                 <tr>
-                    <td>{{ $no++ }}</td>
-                    <td>{{ $datas->nama_anak }}</td>
-                    <td>{{ $datas->nama_ibu }} & {{ $datas->nama_suami }}</td>
-                    <td>
+                    <td style="width: 5%; text-align: center;">{{ $no++ }}</td>
+                    <td style="width: 25%; text-align: center;">{{ $datas->nama_anak }}</td>
+                    <td style="width: 20%; text-align: center;">{{ $datas->nama_ibu }} & {{ $datas->nama_suami }}</td>
+                    <td style="width: 15%; text-align: center;">
                         @if ($datas->jenis_kelamin == 0)
                             Laki-Laki
                         @else
                             Perempuan
                         @endif
                     </td>
-                    <td>{{ $datas->tgl_lhr }}</td>
-                    <td>
+                    <td style="width: 10%; text-align: center;">{{ $datas->tgl_lhr }}</td>
+                    <td style="width: 25%; text-align: center;">
                         @if ($datas->KMS == 0)
                             <i class="fa fa-check-circle-o fa-lg" aria-hidden="true" style="color: green"></i>
                         @else
@@ -55,12 +55,12 @@
     <br>
     <br>
     <div style="float: right;padding: 10px;">
-    <p>Semarang, </p>
+    <p>Sidrap, </p>
     <p>Ketua Kader Posyandu</p>
         <br>
         <br>
         <br>
-    <p>Ita Sujarwo</p>
+    <p>yuni hartika</p>
     </div>
     </div>
 </body>

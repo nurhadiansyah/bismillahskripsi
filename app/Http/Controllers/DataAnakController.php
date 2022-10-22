@@ -75,7 +75,11 @@ class DataAnakController extends Controller
      */
     public function show($id)
     {
-        //
+        $data = DB::table('dataanaks as A')
+                ->leftjoin('users as I', 'I.id', '=', 'A.id_ibu')
+                ->get();
+
+        return view ('layouts.anak.cetakanak',compact('data'));
     }
 
     /**
@@ -138,11 +142,7 @@ class DataAnakController extends Controller
 
     public function CetakAnak()
     {
-        $data = DB::table('dataanaks as A')
-                ->leftjoin('users as I', 'I.id', '=', 'A.id_ibu')
-                ->get();
-
-        return view ('layouts.anak.cetakanak',compact('data'));
+        
     }
     
 }
