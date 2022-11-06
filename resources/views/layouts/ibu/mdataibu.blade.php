@@ -17,13 +17,13 @@
                 <span class="icon text-white-50">
                     <i class="fas fa-plus"></i>
                 </span>
-                <span class="text">tambah data</span>
+                <span class="text">Tambah Data</span>
             </a>
-            <a href="ibus/show" target="_blank" class="btn btn-primary btn-icon-split">
+            <a href="ibus/show" target="_blank" class="btn btn-success btn-icon-split">
                 <span class="icon text-white-50">
                     <i class="fas fa-print"></i>
                 </span>
-                <span class="text">Print</span>
+                <span class="text">Cetak Data</span>
             </a>
         </div>
         <div class="card-body">
@@ -69,8 +69,8 @@
                                     {{ csrf_field() }}
                                     {{ method_field('DELETE') }}
                                     <div class="btn-group">
-                                        <a href="{{ route('ibus.edit', $datas->id) }}" class="btn btn-warning btn-circle " data-toggle="tooltip" title="Edit"><span ><i class="fa-solid fa-pencil"></i></span></a>
-                                        <button class="btn btn-danger btn-circle" type="submit" onclick="return confirm('Yakin ingin menghapus data?')" data-toggle="tooltip" title="Hapus"><span class="fas fa-trash"></span></button>
+                                        <a href="{{ route('ibus.edit', $datas->id) }}" class="btn btn-warning btn-sm btn-circle " data-toggle="tooltip" title="Edit"><span ><i class="fa-solid fa-pencil"></i></span></a>
+                                        <button class="btn btn-danger btn-sm btn-circle" type="submit" onclick="return confirm('Yakin ingin menghapus data?')" data-toggle="tooltip" title="Hapus"><span class="fas fa-trash"></span></button>
                                     </div>
                                 </form>
                             </td>

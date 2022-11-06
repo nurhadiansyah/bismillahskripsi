@@ -16,13 +16,13 @@
                 <span class="icon text-white-50">
                     <i class="fas fa-plus"></i>
                 </span>
-                <span class="text">tambah data</span>
+                <span class="text">Tambah Data</span>
             </a>
-            <a href="Imunisasis/show" target="_blank" class="btn btn-primary btn-icon-split">
+            <a href="Imunisasis/show" target="_blank" class="btn btn-success btn-icon-split">
                 <span class="icon text-white-50">
                     <i class="fas fa-print"></i>
                 </span>
-                <span class="text">Cetak</span>
+                <span class="text">Cetak Data</span>
             </a>
         </div>
         <div class="card-body">
@@ -31,7 +31,7 @@
                     <thead>
                         <tr>
                             <tr>
-                                <th>#</th>
+                                <th>No</th>
                                 <th>Nama Anak</th>
                                 <th>Nama Imunisasi</th>
                                 <th>Tanggal Imunisasi</th>
@@ -57,25 +57,14 @@
                                     {{ csrf_field() }}
                                     {{ method_field('DELETE') }}
                                     <div class="btn-group">
-                                        <a href="{{ route('Imunisasis.edit', $datas->id_imun) }}" class=" btn btn-sm btn-warning" data-toggle="tooltip" title="Edit"><span class="glyphicon glyphicon-edit"></span></a>
-                                        <button class="btn btn-sm btn-danger" type="submit" onclick="return confirm('Yakin ingin menghapus data?')" data-toggle="tooltip" title="Hapus"><span class="glyphicon glyphicon-trash"></span></button>
+                                        <a href="{{ route('Imunisasis.edit', $datas->id_imun) }}" class=" btn btn-circle btn-sm btn-warning" data-toggle="tooltip" title="Edit"><span class="fa-solid fa-pencil"></span></a>
+                                        <button class="btn btn-sm btn-circle btn-danger" type="submit" onclick="return confirm('Yakin ingin menghapus data?')" data-toggle="tooltip" title="Hapus"><span class="fa-solid fa-trash"></span></button>
                                     </div>
                                 </form>
                             </td>
                         </tr>
                         @endforeach
                     </tbody>
-                    {{-- <tfoot>
-                        <tr>
-                            <th>Name</th>
-                            <th>Position</th>
-                            <th>Office</th>
-                            <th>Age</th>
-                            <th>Start date</th>
-                            <th>Salary</th>
-                        </tr>
-                    </tfoot> --}}
-                    
                 </table>
             </div>
         </div>

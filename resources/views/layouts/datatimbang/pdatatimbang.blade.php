@@ -77,8 +77,8 @@
 </div> --}}
 <div class="card shadow mb-4">
 	<div class="card-header py-3">
-		<h6 class="m-0 font-weight-bold text-primary">Data timbang</h6>
-		<a href="tanak/show" target="_blank" class="btn btn-primary btn-icon-split">
+		<h6 class="m-0 font-weight-bold text-primary">Data Timbang</h6>
+		<a href="tanak/show" target="_blank" class="btn btn-success btn-icon-split">
 			<span class="icon text-white-50">
 				<i class="fas fa-print"></i>
 			</span>
@@ -89,7 +89,7 @@
 		<div class="table-responsive">
 			<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 							<tr>
-								<th>#</th>
+								<th>No</th>
 								<th>Nama Anak</th>
 								<th>Umur</th>
 								<th>BB/TB</th>
@@ -117,8 +117,8 @@
 										{{ csrf_field() }}
 										{{ method_field('DELETE') }}
 										<div class="btn-group">
-											<a href="{{ route('tanak.edit', $datas2->id_timbang) }}" class=" btn btn-sm btn-warning" data-toggle="tooltip" title="Edit"><span class="glyphicon glyphicon-edit"></span></a>
-											 <button class="btn btn-sm btn-danger" type="submit" onclick="return confirm('Yakin ingin menghapus data?')" data-toggle="tooltip" title="Hapus"><span class="glyphicon glyphicon-trash"></span></button>
+											<a href="{{ route('tanak.edit', $datas2->id_timbang) }}" class=" btn btn-sm btn-circle btn-warning" data-toggle="tooltip" title="Edit"><span class="fa-solid fa-pencil"></span></a>
+											 <button class="btn btn-sm btn-circle btn-danger" type="submit" onclick="return confirm('Yakin ingin menghapus data?')" data-toggle="tooltip" title="Hapus"><span class="fa-solid fa-trash"></span></button>
 										</div>
 									 </form>
 								</td>

@@ -106,7 +106,7 @@
                              <table id="example1" class="table table-bordered table-striped" style="width: 100%;">
                                 <thead>
                                     <tr>
-                                        <th style="width: 5%;text-align: center;">#</th>
+                                        <th style="width: 5%;text-align: center;">No</th>
                                         <th style="width: 35%;text-align: center;">Nama Imunisasi</th>
                                         <th style="width: 35%;text-align: center;">Umur</th>
                                         <th style="width: 25%;text-align: center;">Aksi</th>
@@ -124,7 +124,7 @@
                                                 {{ csrf_field() }}
                                                 {{ method_field('DELETE') }}
                                                 <div class="btn-group">
-                                                    <button class="btn btn-sm btn-danger" type="submit" onclick="return confirm('Yakin ingin menghapus data?')" data-toggle="tooltip" title="Hapus"><span class="glyphicon glyphicon-trash"></span></button>
+                                                    <button class="btn btn-danger btn-circle" type="submit" onclick="return confirm('Yakin ingin menghapus data?')" data-toggle="tooltip" title="Hapus"><span class="fa-solid fa-trash"></span></button>
                                                 </div>
                                             </form>
                                         </td>

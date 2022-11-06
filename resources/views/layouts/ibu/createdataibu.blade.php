@@ -23,7 +23,7 @@
                     <div class="row">
                         <label class="col-md-2 control-label text-right align-bottom"for="nama_ibu">Nama Ibu</label>
                         <div class="input-group col-md-7">
-                            <div class="input-group-prepend input-group">
+                            <div class="input-group input-group">
                                 <span class="input-group-text" ><i class="fa fa-venus"></i></span>
                                 <input type="text" class="form-control " placeholder="Nama Ibu" name="nama_ibu" required>
                             </div>

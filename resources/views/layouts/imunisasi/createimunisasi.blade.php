@@ -7,11 +7,11 @@
             @csrf
             <div class="form-group">
                 <div class="row">
-                    <label class="col-md-4 control-label" for="id_anak">Nama Anak</label>
-                    <div class="input-group col-md-8">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-child"></i></span>
-                            <select class="form-control select2" name="id_anak" style="width: 100%;" required>
+                    <label class="col-md-2 control-label" for="id_anak">Nama Anak</label>
+                    <div class="input-group col-md-10">
+                        <div class="input-group-prepend ">
+                            <span class="input-group-text  "><i class="fa fa-child"></i></span>
+                            <select class="form-control select2 " name="id_anak" style="width: 100%;" required>
                                 <option selected="selected" value="">-- Nama Anak --</option>
                                 @foreach($data as $datas)
                                     <option value="{{ $datas->id_anak }}">{{ $datas->nama_anak }} - {{ $datas->nama_ibu }} & {{ $datas->nama_suami }}</option>
@@ -23,17 +23,17 @@
             </div>
             <div class="form-group">
                 <div class="row">
-                    <label class="col-md-4 control-label" for="id_j_imun">Nama Imunisasi</label>
-                    <div class="input-group col-md-8">
+                    <label class="col-md-2 control-label" for="id_j_imun">Nama Imunisasi</label>
+                    <div class="input-group col-md-10">
                         <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-child"></i></span>
+                            <span class="input-group-text"><i class="fa fa-child"></i></span>
                             <select class="form-control select2" name="id_j_imun[]" multiple="multiple" data-placeholder="Nama Imunisasi" style="max-width: 100%">
                                 @foreach($data2 as $datas2)
                                     <option value="{{ $datas2->id_j_imun }}">{{ $datas2->nama_imun }}</option>
                                 @endforeach
                             </select>
                         </div>
-                        <p style="color: grey">Note : Dapat isi lebih dari satu</p>
+                        <p style="color: grey">Note : Pilih salah satu</p>
                     </div>
                 </div>
             </div>
@@ -42,17 +42,17 @@
                     <label class="col-md-4 control-label" for="tgl_imun">Tanggal Imunisasi</label>
                     <div class="input-group col-md-8">
                         <div class="input-group date">
-                            <div class="input-group-addon">
+                            <div class="input-group-text">
                                 <i class="fa fa-calendar"></i>
                             </div>
-                            <input type="text" class="form-control pull-right" id="datepicker" placeholder="Tanggal Imunisasi" name="tgl_imun" required autocomplete="off">
+                            <input type="text" class="form-control pull-right" id="datepicker" placeholder="yyyy/mm/dd" name="tgl_imun" required autocomplete="off">
                         </div>
                     </div>
                 </div>
             </div>
             <div class="form-group">
                 <div class="row">
-                    <label class="col-md-4 control-label" for="booster">Booster</label>
+                    <label class="col-md-2 control-label" for="booster">Booster</label>
                     <div class="input-group col-md-8">
                         <div class="form-check-inline">
                             <label class="form-check-label" style="padding: 6px 10px 0px 0px;">
@@ -67,7 +67,7 @@
             </div>
             <div class="form-group">
                 <div class="row">
-                    <label class="col-md-4 control-label" for="ket_imun">Keterangan</label>
+                    <label class="col-md-2 control-label" for="ket_imun">Keterangan</label>
                     <div class="input-group col-md-8">
                         <textarea class="form-control" rows="4" id="keterangan" name="ket_imun"></textarea>
                     </div>
