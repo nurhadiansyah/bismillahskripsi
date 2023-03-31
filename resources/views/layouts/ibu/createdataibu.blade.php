@@ -22,7 +22,7 @@
                 <div class="form-horizontal" class="form-group">
                     <div class="row">
                         <label class="col-md-2 control-label text-right align-bottom"for="nama_ibu">Nama Ibu</label>
-                        <div class="input-group col-md-7">
+                        <div class="input-group col-md-8">
                             <div class="input-group input-group">
                                 <span class="input-group-text" ><i class="fa fa-venus"></i></span>
                                 <input type="text" class="form-control " placeholder="Nama Ibu" name="nama_ibu" required>
@@ -30,21 +30,22 @@
                         </div>
                     </div> 
                 </div>
-                    <div class="form-group">
+                <br>
+                <div class="form-group">
                         <div class="row">
                             <label class="col-md-2 control-label text-right align-bottom" for="nama_suami">Nama Suami</label>
-                            <div class="input-group col-md-7">
+                            <div class="input-group col-md-8">
                                 <div class="input-group-prepend input-group">
                                     <span class="input-group-text"><i class="fa fa-mars"></i></span>
                                     <input type="text" class="form-control" placeholder="Nama Suami" name="nama_suami" required>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                </div>
                     <div class="form-group ">
                         <div class="row form-inline">
                             <label class="col-md-2 control-label text-right align-bottom" for="ttl">Tempat, Tanggal Lahir</label>
-                            <div class="input-group col-md-8">
+                            <div class="input-group col-md-10">
                                 <div class="input-group-prepend input-group" style="padding-right: 6px;">
                                     <span class="input-group-text"><i class="fa fa-home"></i></span>
                                     <input type="text" class="form-control date form-control" placeholder="Tempat Lahir" name="tempat_lahir" required>
@@ -60,39 +61,46 @@
                     </div>
                     <div class="form-group ">
                         <div class="row form-inline">
-                            <label class="col-md-2 control-label text-right align-bottom" for="alamat">Alamat</label>
-                            <div class="input-group col-md-9">
+                            <label class="col-md-2 control-label text-right align-bottom"  for="alamat">Alamat</label>
+                            <div class="input-group col-md-10">
                                 <div class="input-group" style="padding-right: 6px;">
                                     <span class="input-group-text col-md-2"><i class="fa fa-address-card"></i></span>
                                     <input type="text" class="form-control" placeholder="Alamat"  name="alamat" required>
                                 </div>
-                                <div class="input-group col-md-2 " style="padding-right: 6px;">
+                                <div class="input-group col-md-3 " style="padding-right: 6px;">
                                     <span class="input-group-text"><i class="fa fa-circle-o-notch">RT</i></span>
                                     <input type="number" class="form-control" placeholder="Rt" name="rt" required>
                                 </div>
-                                <br>
-                                <div class="input-group col-md-2">
+                                <div class="input-group col-md-3">
                                     <span class="input-group-text"><i class="fa fa-circle-o-notch">RW</i></span>
                                     <input type="number" class="form-control" placeholder="Rw" name="rw" value="1" required>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="form-group form-inline">
-                        <div class="row">
-                            <label class="col-md-2 control-label text-right align-bottom" for="alamat2">.</label>
-                            <div class="input-group col-md-10">
-                                <div class="input-group col-md-6" style="padding-right: 6px;">
-                                    <span class="input-group-text"><i class="fa fa-circle-o-notch"></i></span>
-                                    <input type="text" class="form-control" placeholder="Kelurahan" value="" name="kelurahan" required>
-                                </div>
-                                <div class="input-group col-md-6">
-                                    <span class="input-group-text"><i class="fa fa-circle-o-notch"></i></span>
-                                    <input type="text" class="form-control" placeholder="Kecamatan" value="" name="kecamatan" required>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <table   width="100%" >
+                        <thead>
+                            <tr>
+                                <th style="width: 3%;text-align: center;"></th>
+                                <th style="width: 15%;text-align: center;"><div class="form-group form-inline">
+                                    <div class="row" >
+                                        <label class="col-md-10 control-label text-right align-bottom" for="alamat2"></label>
+                                        <div class="input-group col-md-10">
+                                            <div class="input-group col-md-6" style="padding-right: 6px;">
+                                                <span class="input-group-text"><i class="fa fa-circle-o-notch"></i></span>
+                                                <input type="text" class="form-control" placeholder="Kelurahan" value="" name="kelurahan" required>
+                                            </div>
+                                            <div class="input-group col-md-6">
+                                                <span class="input-group-text"><i class="fa fa-circle-o-notch"></i></span>
+                                                <input type="text" class="form-control" placeholder="Kecamatan" value="" name="kecamatan" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </th>
+                            </tr>
+                        </thead>
+                    </table>
+                    
                     <div class="form-group">
                         <div class="row">
                             <label class="col-md-2 control-label text-right align-bottom" for="agama">Agama</label>

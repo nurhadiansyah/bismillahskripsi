@@ -12,7 +12,7 @@
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Data Asnak</h6>
+            <h6 class="m-0 font-weight-bold text-primary">Data Anak</h6>
             <a href="anaks/create" class="btn btn-primary btn-icon-split">
                 <span class="icon text-white-50">
                     <i class="fas fa-plus"></i>
@@ -45,8 +45,8 @@
                         @foreach($data as $datas)
                         <tr>
                             <td>{{ $no++ }}</td>
-                            <td>{{ $datas->nama_anak }}</td>
-                            <td>{{ $datas->nama_ibu }} & {{ $datas->nama_suami }}</td>
+                            <td style="text-transform: capitalize">{{ $datas->nama_anak }}</td>
+                            <td style="text-transform: capitalize">{{ $datas->nama_ibu }} & {{ $datas->nama_suami }}</td>
                             <td>
                                 @if ($datas->jenis_kelamin == 0)
                                     Laki-Laki
@@ -68,6 +68,7 @@
                                     {{ method_field('DELETE') }}
                                     <div class="btn-group">
                                         <a href="{{ route('anaks.edit', $datas->id_anak) }}" class=" btn btn-warning btn-circle" data-toggle="tooltip" title="Edit"><span class="fa-solid fa-pencil"></span></a>
+                                        <a href="{{ route('Kms.show',$datas->id_anak) }}" class=" btn btn-info btn-circle" data-toggle="tooltip" title="detail"><span class="fa-solid fa-info"></span></a>
                                         <button class="btn  btn-danger btn-circle" type="submit" onclick="return confirm('Yakin ingin menghapus data?')" data-toggle="tooltip" title="Hapus"><span class="fa-solid fa-trash"></span></button>
                                     </div>
                                 </form>

@@ -144,5 +144,17 @@ class DataAnakController extends Controller
     {
         
     }
+    public function detail($id)
+    {
+       
+        
+    }
+     /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    
     
 }

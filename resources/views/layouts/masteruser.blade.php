@@ -43,24 +43,31 @@
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">SKRIPSI<sup>2</sup></div>
+                <div class="sidebar-brand-text mx-3">SKRIPSI</div>
             </a>
 
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            @foreach($data as $datas)
-            <form action="{{ route('pemakai.show', $datas->id_anak) }}" method="get">
+            @foreach($dataumum as $dataank)
+            {{-- <form action="{{ route('pemakai.show', $datas->id_anak) }}" method="get">
                 <div class="nav-item active">
                     <button  type="submit" data-toggle="tooltip" title="Hapus"><span >{{ $datas->nama_anak }}</span></button>
                 </div>
-                </form>
+                </form> --}}
                 {{-- <li >
-                    <a class="nav-link" href="{{ route('pemakai.show', $datas->id_anak) }}">
+                    <a class="nav-link" href="{{ route('pemakai.show', $dataank->id_anak) }}">
                         <i class="fas fa-fw fa-tachometer-alt"></i>
-                        <span></span></a>
+                        <span>{{$dataank->nama_anak}}</span></a>
                 </li> --}}
+
+                <li class="nav-item">   
+                    <a class="nav-link" href="{{ route('pemakai.show', $dataank->id_anak) }}">
+                        <i class="fas fa-fw fa-tachometer-alt"></i>
+                        <span>{{$dataank->nama_anak}}</span>
+                    </a>
+                </li>
             @endforeach
             <!-- Divider -->
             <hr class="sidebar-divider">
@@ -69,14 +76,7 @@
             
 
             <!-- Nav Item - Pages Collapse Menu -->
-            
-
-            
-
-          
-
-            
-            
+        
 
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">
@@ -92,22 +92,16 @@
         <div id="content-wrapper" class="d-flex flex-column" class="topright">
 
             <!-- Main Content -->
-            <div >
+            <div id="content" >
 
                 <!-- Topbar -->
-                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow" id="content" position="absolute" top="8px" right="16px" font-size="18px">
-
-                    <!-- Sidebar Toggle (Topbar) -->
-                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                        <i class="fa fa-bars"></i>
-                    </button>
-                    <div class="topright">
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow" >
+                    <ul class="navbar-nav ml-auto">
                         <li class="nav-item dropdown no-arrow" >
-                            <div class="topright" >
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">
-                                    <p>{{Auth::user()->nama_ibu}}</p>
+                                    {{Auth::user()->nama_ibu}}
                                 </span>
                                 <img class="img-profile rounded-circle"
                                     src="{{asset('template/img/undraw_profile.svg')}}">
@@ -115,14 +109,6 @@
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                {{-- <a class="dropdown-item" href="#">
-                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Profile
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Settings
-                                </a> --}}
                                 <a class="dropdown-item" href="#">
                                     <i class="fa fa-circle text-success"></i> 
                                         @if (Auth::user()->level == 1)
@@ -137,10 +123,10 @@
                                     Logout
                                 </a>
                             </div>
-                        </div>
+                        
                         </li>
-                    </div>
                     </ul>
+                    
 
                 </nav>
                 <!-- End of Topbar -->
@@ -247,7 +233,9 @@
      <!-- <script src="{!! asset('dist/js/pages/dashboard.js') !!}"></script> -->
      <!-- AdminLTE for demo purposes -->
      <!-- <script src="{!! asset('dist/js/demo.js') !!}"></script> -->
- 
+     <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
      <script>
          /** tambah class active jika di klik */
          var url = window.location;

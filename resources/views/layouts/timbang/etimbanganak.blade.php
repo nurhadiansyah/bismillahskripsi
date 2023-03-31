@@ -62,6 +62,15 @@
 						</div>
 						<div class="form-group">
 							<div class="row">
+								<label class="col-md-2 control-label" for="tindakan">Tindakan</label>
+								<div class="input-group col-md-8">
+									{{-- <textarea class="form-control" rows="4" id="tindakan" name="tindakan" ></textarea> --}}
+									<input type="text" class="form-control" row="4" placeholder="Tindakan" name="tindakan" value="{{ $datas->tindakan }}" required>
+								</div>
+							</div>
+					</div>
+						<div class="form-group">
+							<div class="row">
 								<label class="col-md-4 control-label" for="name"></label>
 								<div class="input-group col-md-8">
 									<button type="submit" class="btn btn-primary" style="margin-right: 6px;">Simpan</button>

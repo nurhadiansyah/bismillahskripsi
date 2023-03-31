@@ -4,6 +4,7 @@
 
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\KmsController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DataIbuController;
 use App\Http\Controllers\PemakaiController;
@@ -69,6 +70,11 @@ Route::resource('logins', LoginController::class);
 Route::resource('pengguna', PenggunaController::class);
 Route::resource('pemakai', PemakaiController::class);
 Route::resource('dashboard', DashboardController::class);
+Route::resource('Kms', KmsController::class);
+
+// Route::get('/pemakai/{id}', function ($id) {
+//     return view
+// });
 
 // Route::get('dashboard', function () { return view('layouts.dasboard.dasboard');});
 

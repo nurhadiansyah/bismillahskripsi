@@ -22,7 +22,8 @@
     <link rel="stylesheet" href="{!! asset('bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css') !!}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://kit.fontawesome.com/dcd0634efd.js" crossorigin="anonymous"></script>
-
+    <link href="{{ asset('template/vendor/datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet">
+    <link href="https://cdn.datatables.net/1.13.3/css/jquery.dataTables.css">
     <!-- PWA  -->
     <meta name="theme-color" content="#6777ef"/>
     <link rel="apple-touch-icon" href="{{ asset('logo.PNG') }}">
@@ -43,7 +44,7 @@
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">BISMILLAH  SKRIPSI</div>
+                <div class="sidebar-brand-text mx-3">PELAYANAN POSYANDU</div>
             </a>
 
             <!-- Divider -->
@@ -157,16 +158,13 @@
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow" id="content" position="absolute" top="8px" right="16px" font-size="18px">
 
                     <!-- Sidebar Toggle (Topbar) -->
-                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                        <i class="fa fa-bars"></i>
-                    </button>
-                    <div class="topright">
+                    <ul class="navbar-nav ml-auto">
                         <li class="nav-item dropdown no-arrow" >
-                            <div class="topright" >
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                            
+                                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">
-                                    <p>{{Auth::user()->nama_ibu}}</p>
+                                    {{Auth::user()->nama_ibu}}
                                 </span>
                                 <img class="img-profile rounded-circle"
                                     src="{{asset('template/img/undraw_profile.svg')}}">
@@ -174,14 +172,12 @@
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                {{-- <a class="dropdown-item" href="#">
-                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Profile
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Settings
-                                </a> --}}
+                                
+                                <a class="dropdown-item">
+                                <span >
+                                    <p>{{Auth::user()->nama_ibu}}</p>
+                                </span>
+                                    </a>
                                 <a class="dropdown-item" href="#">
                                     <i class="fa fa-circle text-success"></i> 
                                         @if (Auth::user()->level == 1)
@@ -196,9 +192,9 @@
                                     Logout
                                 </a>
                             </div>
-                        </div>
+                        
                         </li>
-                    </div>
+                    
                     </ul>
 
                 </nav>
@@ -209,16 +205,16 @@
 </div>
                 <!-- Begin Page Content -->
                 
-                <!-- /.container-fluid -->
+                <!-- /.container-fluid --> 
 
             </div>
             <!-- End of Main Content -->
 
             <!-- Footer -->
-            <footer class="sticky-footer bg-white">
+            <footer class="sticky-footer bg-white" class="footer" >
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; podyandu 2021</span>
+                        <span>Copyright &copy; Nurhadiansyah</span>
                     </div>
                 </div>
             </footer>
@@ -320,6 +316,10 @@
          }).parentsUntil(".sidebar-menu > .treeview-menu").addClass('active');
      </script>
  
+    <script src="{{asset ('template/vendor/datatables/jquery.dataTables.min.js')}}"></script>
+    <script src="{{asset ('template/vendor/datatables/dataTables.bootstrap4.min.js')}}"></script>
+    <script src="https://cdn.datatables.net/1.13.3/js/jquery.dataTables.js"></script>
+
 
     {{-- PWA  --}}
     <script src="{{ asset('/sw.js') }}"></script>
@@ -342,6 +342,18 @@
     }
 
     </style>
+<style>
+    .footer {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      color: white;
+      text-align: center;
+    }
+    </style>
+
 </body>
+
 
 </html>

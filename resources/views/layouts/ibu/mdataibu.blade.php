@@ -33,7 +33,7 @@
                         <tr>
                             <th>No</th>
                             <th>Nama Ibu</th>
-                            <th>Aama Ayah</th>
+                            <th>Nama Ayah</th>
                             <th>Alamat</th>
                             <th>No BPJS</th>
                             <th>Status Gakin</th> 
@@ -47,9 +47,9 @@
                         @foreach($data as $datas)
                         <tr>
                             <td>{{ $no++ }}</td>
-                            <td>{{ $datas->nama_ibu }}</td>
-                            <td>{{ $datas->nama_suami }}</td>
-                            <td>{{ $datas->alamat }} Rt {{ $datas->rt }}/Rw {{ $datas->rw }}</td>
+                            <td style="text-transform: capitalize">{{ $datas->nama_ibu }}</td>
+                            <td style="text-transform: capitalize">{{ $datas->nama_suami }}</td>
+                            <td style="text-transform: capitalize">{{ $datas->alamat }} Rt {{ $datas->rt }}/Rw {{ $datas->rw }}</td>
                             <td>
                                 @if ($datas->No_BPJS == null)
                                     <p style="text-align: center; color: #9ca4af;">Tidak Ada</p>
@@ -93,6 +93,5 @@
             </div>
         </div>
     </div>
-
 </div>
 @endsection

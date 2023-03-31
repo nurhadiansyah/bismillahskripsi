@@ -28,9 +28,11 @@ class TimbangAnakController extends Controller
                 ->whereMonth('T.tgl_timbang', $nm)
                 ->whereYear('T.tgl_timbang', $nY)
                 ->get();
+        
         $data2 = DB::table('timbangs as T')
                 ->leftjoin('dataanaks as A', 'T.id_anak', '=', 'A.id_anak')
                 ->get();
+        
        
         return view('layouts.datatimbang.pdatatimbang', compact('data','data2'));
         // return view ('layouts.timbang.ptimbangananak');
@@ -69,13 +71,15 @@ class TimbangAnakController extends Controller
                 ->whereMonth('tgl_timbang', $nm)->whereYear('tgl_timbang', $nY)
                 ->where('id_anak', $idA)
                 ->first();
+        
         if ($check == null) {
             // menerima data request
             $data               = new Timbang;
             $data->id_anak      = $request->get('id_anak');
             $data->berat_badan  = $request->get('berat_badan');
             $data->tinggi_badan = $request->get('tinggi_badan');
-
+            $data->tindakan     = $request->get('tindakan');
+            // dd($data);
             //////////Umur
             $id = $request->get('id_anak');
             $anak = Datanak::where('id_anak', $id)->first();
@@ -1425,7 +1429,7 @@ class TimbangAnakController extends Controller
             // dd($data->ind_b_lalu);
             ////////Ket Timbang End
 
-            // dd($data);
+            
             $timbang = new Timbang;
             $timbang = Timbang::create([
                 'id_anak' => $data-> id_anak,
@@ -1437,9 +1441,11 @@ class TimbangAnakController extends Controller
                 'ind_naik' => $data->ind_naik,
                 'ind_t_lalu' => $data->ind_t_lalu,
                 'ind_b_lalu' => $data->ind_b_lalu,
-                'status_gizi' => $q
+                'status_gizi' => $q,
+                'tindakan' => $data->tindakan
+                
             ]);
-            
+            // dd($data);
             $timbang->save();
             
             // dd($timbang);
@@ -1495,7 +1501,7 @@ class TimbangAnakController extends Controller
             $dataKelamin = $dK->jenis_kelamin;
 
             // dd($dataKelamin);
-
+            
             $dataCreate = DB::table('dataanaks as A')
                     ->leftjoin('users as I', 'I.id', '=', 'A.id_ibu')
                     ->orderBy('nama_anak', 'asc')
@@ -1516,6 +1522,8 @@ class TimbangAnakController extends Controller
             }
             // dd($grafik);
             /////////
+        
+
 
             if ($timbang->save() == true && $vitamin == 'y') {
                 if ($imunisasi == 'y') {

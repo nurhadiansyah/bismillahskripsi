@@ -9,11 +9,11 @@
                 <!-- <input name="_method" type="hidden" value="PATCH" /> -->
                 <div class="form-group">
                     <div class="row">
-                        <label class="col-md-4 control-label" for="id">Nama Ibu</label>
-                        <div class="input-group col-md-8">
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="fa fa-venus-mars"></i></span>
-                                <select class="form-control select2" name="id" style="width: 100%;" required>
+                        <label class="col-md-2 control-label" for="id">Nama Ibu</label>
+                        <div class="input-group-prepend ">
+                            <div class="input-group-prepend col-md-20">
+                                <span class="input-group-text"><i class="fa fa-venus-mars"></i></span>
+                                <select class="form-control" name="id" style="width: 100%;" required>
                                     <option selected="selected" value="">-- Nama Ibu --</option>
                                     @foreach($data as $datas)
                                         <option value="{{ $datas->id }}">{{ $datas->nama_ibu }} - {{ $datas->nama_suami }}</option>
@@ -25,10 +25,10 @@
                 </div>
                 <div class="form-group">
                     <div class="row">
-                        <label class="col-md-4 control-label" for="email">Email</label>
+                        <label class="col-md-2 control-label" for="email">Email</label>
                         <div class="input-group col-md-8">
                             <div class="input-group">
-                                <span class="input-group-addon"><i class="fa fa-envelope-o"></i></span>
+                                <span class="input-group-text"><i class="fa fa-envelope-o"></i></span>
                                 <input type="text" class="form-control" placeholder="Email" name="email" required>
                             </div>
                         </div>
@@ -36,10 +36,10 @@
                 </div>
                 <div class="form-group">
                     <div class="row">
-                        <label class="col-md-4 control-label" for="email">Password</label>
+                        <label class="col-md-2 control-label" for="email">Password</label>
                         <div class="input-group col-md-8">
                             <div class="input-group">
-                                <span class="input-group-addon"><i class="fa fa-key"></i></span>
+                                <span class="input-group-text"><i class="fa fa-key"></i></span>
                                 <input type="text" class="form-control" placeholder="Password" name="password" required>
                             </div>
                         </div>
@@ -47,11 +47,11 @@
                 </div>
                 <div class="form-group">
                     <div class="row">
-                        <label class="col-md-4 control-label" for="level">Level</label>
+                        <label class="col-md-2 control-label" for="level">Level</label>
                         <div class="input-group col-md-8">
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="fa fa-venus-mars"></i></span>
-                                <select class="form-control" name="level" style="width: 100%;">
+                            <div class="input-group ">
+                                <span class="input-group-text"><i class="fa fa-venus-mars"></i></span>
+                                <select class="form-control input-group" name="level" >
                                     <option selected="selected" value="">-- Level --</option>
                                     <option value="0">User Ibu</option>
                                     <option value="1">Admin</option>

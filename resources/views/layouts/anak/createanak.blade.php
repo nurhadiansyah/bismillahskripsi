@@ -25,6 +25,7 @@
                                     </div>
                                 </div>
                             </div>
+                            <br>
                         <div class="form-group">
                             <div class="row">
                                 <label class="col-md-2 control-label text-right" for="nama_anak">Nama Orang Tua</label>
@@ -34,7 +35,7 @@
                                         <select class="form-control select2" name="id_ibu" required>
                                             <option selected="selected" value="">-- Orang Tua --</option>
                                             @foreach($data as $datas)
-                                              <option value="{{ $datas->id }}">{{ $datas->nama_ibu }} - {{ $datas->nama_suami }}</option>
+                                              <option style="text-transform: capitalize" value="{{ $datas->id }}">{{ $datas->nama_ibu }} - {{ $datas->nama_suami }}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -60,7 +61,7 @@
                             <div class="row">
                                 <label class="col-md-2 control-label text-right" for="alamat2">Berat dan Tinggi Badan</label>
                                 <div class="input-group col-md-10">
-                                    <div class="input-group col-md-5" style="padding-right: 6px;">
+                                    <div class="input-group " style="padding-right: 6px;">
                                         <span class="input-group-text"><i class="fa fa-balance-scale fa-fw"></i></span>
                                         <input type="text" class="form-control" placeholder="Berat Badan Lahir" name="bb_lahir" required>
                                         <span class="input-group-text">Kg</span>
@@ -101,9 +102,34 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group form-inline ">
-                            <div class="row">
-                                <label class="col-md-2 control-label text-right" for="alamat2">Bersalin</label>
+                                <table  width="100%" >
+                                    <tbody>
+                                        <tr>
+                                            <td style="width: 8%;text-align: center;" >
+                                                <label class="control-label text-right" for="alamat2">Bersalin</label> 
+                                            </td>
+                                            <th style="width: 40%;text-align: center;">
+                                                <div class=" form-inline ">
+                                                <div class="row">
+                                                <div class="input-group ">
+                                                    <label class="col-md-12 control-label text-right align-bottom"></label>
+                                                    <div class="input-group col-md-6 " style="padding-right: 6px;">
+                                                        <span class="input-group-text"><i class="fa fa-hotel fa-fw"></i></span>
+                                                        <input type="text" class="form-control" placeholder="Jenis Persalinan" name="jenis_persalinan" required>
+                                                    </div>
+                                                    <div class="input-group col=md-6">
+                                                        <span class="input-group-text"><i class="fa fa-hospital-o fa-fw"></i></span>
+                                                        <input type="text" class="form-control" placeholder="Tempat Bersalin" name="tempat_persalinan" required>
+                                                    </div>
+                                                </div>
+                                                </div>
+                                                </div>
+                                            </th>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <br>
+                                {{-- <label class="col-md-2 control-label text-right" for="alamat2">Bersalin</label>
                                 <div class="input-group col-md-10">
                                     <div class="input-group col-md-5 " style="padding-right: 6px;">
                                         <span class="input-group-text"><i class="fa fa-hotel fa-fw"></i></span>
@@ -113,9 +139,8 @@
                                         <span class="input-group-text"><i class="fa fa-hospital-o fa-fw"></i></span>
                                         <input type="text" class="form-control" placeholder="Tempat Bersalin" name="tempat_persalinan" required>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
+                                </div> --}}
+                            
                         <div class="form-group">
                             <div class="row">
                                 <label class="col-md-2 control-label text-right" for="nama_anak">Dokter/Bidan</label>

@@ -111,7 +111,7 @@
 								</td>
 								<td>{{ $datas2->tgl_timbang }}</td>
 								<td>{{ $datas2->status_gizi }}</td>
-								<td>{{ $datas2->ket_timbang }}</td>
+								<td>{{ $datas2->tindakan }}</td>
 								<td>
 									<form action="{{ route('tanak.destroy', $datas2->id_timbang) }}" method="post">
 										{{ csrf_field() }}

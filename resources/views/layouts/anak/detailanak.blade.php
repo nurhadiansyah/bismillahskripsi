@@ -1,86 +1,46 @@
+
 @extends('layouts/master')
 
 @section('content')
-<div class="container-fluid">
-
-    {{-- <!-- Page Heading -->
-    <h1 class="h3 mb-2 text-gray-800">Data </h1>
-    <p class="mb-4"> <a target="_blank"
-            href="https://datatables.net">official DataTables documentation</a>.</p> --}}
-
-<div>
-    <!-- DataTales Example -->
-    <div class="card shadow mb-1">
-        <div class="card-header py-2">
-            <div class="panel-heading">Masukkan Data Timbang</div>
-<div class="panel-body">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-9">
-                <form class="form-horizontal" method="post" action="{{route('tanak.store')}}">
-                    @csrf
-                    <div class="form-group">
-                        <div class="row">
-                            <label class="col-md-2 control-label" for="id_anak">Nama Anak</label>
-                            <div class="input-group col-md-10">
-                                <div class="input-group">
-                                    <span class="input-group-text"><i class="fa fa-child fa-fw"></i></span>
-                                    <select class="form-control select2" name="id_anak" " required>
-                                        <option selected="selected" value="">-- Nama Anak --</option>
-                                        @foreach($dataCreate as $datas)
-                                            <option value="{{ $datas->id_anak }}"> {{ $datas->nama_anak }} - {{ $datas->nama_ibu }} & {{ $datas->nama_suami }} </option>
-                                        @endforeach
-                                    </select>
-                                </div>
+<div class="card shadow mb-1">
+<div class="card-header py-2">
+    <div>
+        <div class="box box-solid">
+            <!-- /.box-header -->
+            <div class="box-body">
+                <div class="box-group" id="accordion">
+                    <!-- we are adding the .panel class so bootstrap.js collapse plugin detects it -->
+                    <div class="panel box box-primary">
+                        <div class="box-header with-border">
+                            <h4 class="box-title">
+                                <a >
+                                    <center>
+                                    Grafik Perkembangan Anak
+                                    </center>
+                                </a>
+                            </h4>
+                        </div>
+                        <div >
+                            <div class="box-body">
+                                @if($data->jenis_kelamin == 1)
+                                    <div id="grafik_female" style="height: 700px">
+                                        <!-- view grafik -->
+                                    </div>
+                                @else
+                                    <div id="grafik_male" style="height: 700px">
+                                        <!-- view grafik -->
+                                    </div>
+                                @endif
+                                {!! $chart1 !!}
                             </div>
                         </div>
                     </div>
-                    <div class="form-group form-inline">
-                        <div class="row">
-                            <label class="col-md-2 control-label" for="alamat2">Berat dan Tinggi Badan</label>
-                            <div class="input-group col-md-10">
-                                <div class="input-group" style="padding-right: 6px;">
-                                    <span class="input-group-text"><i class="fa fa-balance-scale fa-fw"></i></span>
-                                    <input type="text" class="form-control" placeholder="Berat Badan" name="berat_badan" required>
-                                    <span class="input-group-text">Kg</span>
-                                </div>
-                                <div class="input-group">
-                                    <span class="input-group-text"><i class="fa fa-long-arrow-up fa-fw"></i></span>
-                                    <input type="text" class="form-control" placeholder="Tinggi Badan" name="tinggi_badan" required>
-                                    <span class="input-group-text">cm</span>
-                                </div>                                
-                                <br/>
-                                <p style="color: grey">Note : Gunakan (.) sebagai pengganti (,)</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="row">
-                            <label class="col-md-2 control-label" for="tindakan">Tindakan</label>
-                            <div class="input-group col-md-8">
-                                <textarea class="form-control" rows="4" id="Tindakan" name="tindakan"></textarea>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="row">
-                            <label class="col-md-2 control-label" for="name"></label>
-                            <div class="input-group col-md-8">
-                                <button type="submit" class="btn btn-primary" style="margin-right: 6px;">Simpan</button>
-                                <a href="{{ route('tanak.index')}}" class="btn btn-danger">Batal</a>
-                            </div>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="col-md-3"></div>
+                </div>
+            <!-- /.box-body -->
         </div>
-    </div>
+  
 </div>
-
-
-
-
+</div>
 @endsection
 
 @section('java')
@@ -90,27 +50,17 @@
 <script src="{!! asset('bower_components/select2/dist/js/select2.full.min.js') !!}"></script>
 <script src="http://code.highcharts.com/highcharts.js"></script>
 <script src="http://code.highcharts.com/modules/exporting.js"></script>
-<script>
-	$(function () {
-		// Date Picker
-		$('#datepicker').datepicker({
-			format: 'yyyy/mm/dd',
-			autoclose: true
-		})
-		//Initialize Select2 Elements
-		$('.select2').select2()
-		//iCheck for checkbox and radio inputs
-		$('input[type="radio"].minimal').iCheck({
-			checkboxClass: 'icheckbox_minimal-blue',
-			radioClass   : 'iradio_minimal-blue'
-		})
-	})
-</script>
 
+<script type="text/javascript">
+    $(function () {
+        $('#example1').DataTable();
+        $('#example2').DataTable();
+    })
+</script>
 <script type="text/javascript">
     // GRAFIK MALE
     $(function() {
-        var data_viewer = {{ Session::get('grafik') }};
+        var data_viewer = <?php echo $grafik; ?>;
 
         Highcharts.chart('grafik_male', {
             colors: ['#7cb5ec', '#f7a35c', '#90ee7e', '#7798BF', '#aaeeee', '#ff0066', '#eeaaee', '#55BF3B', '#DF5353', '#7798BF', '#aaeeee'],
@@ -118,19 +68,16 @@
                 backgroundColor: null,
             },
             title: {
-                text: 'KMS Laki-Laki',
+                text: 'Kartu Menuju Sehat (Laki-Laki)',
                 style: {
                     fontSize: '16px',
                     fontWeight: 'bold',
                     textTransform: 'uppercase'
                 },
             },
-            subtitle: {
-                text: 'Kartu Menuju Sehat'
-            },
             xAxis: {
                 title: {
-                    text: 'Umur',
+                    text: 'Umur/Bulan',
                     style: {
                         textTransform: 'uppercase'
                     },
@@ -145,7 +92,7 @@
             },
             yAxis: {
                 title: {
-                    text: 'Berat Badan',
+                    text: 'Berat Badan/Kg',
                     style: {
                         textTransform: 'uppercase'
                     },
@@ -201,7 +148,7 @@
                     21.8,22.1,22.4,22.6,22.9,
                     23.2,23.5,23.8,24.1,24.3,
                     24.6,24.9,25.2,25.5,25.8,
-                    26.1,26.4,26.7,27.0,27.3
+                    26.1,26.4,26.7,27.0,27.3,
                 ],
                 color: '#f2f200',
             },{
@@ -282,11 +229,10 @@
             }
         });
     })
-</script>
-<script type="text/javascript">
+
     // GRAFIK FEMALE
     $(function() {
-        var data_viewer = {{ Session::get('grafik') }};
+        var data_viewer = <?php echo $grafik; ?>;
 
         Highcharts.chart('grafik_female', {
             colors: ['#7cb5ec', '#f7a35c', '#90ee7e', '#7798BF', '#aaeeee', '#ff0066', '#eeaaee', '#55BF3B', '#DF5353', '#7798BF', '#aaeeee'],
@@ -294,15 +240,12 @@
                 backgroundColor: null,
             },
             title: {
-                text: 'KMS Perempuan',
+                text: 'Kartu Menuju Sehat (Perempuan)',
                 style: {
                     fontSize: '16px',
                     fontWeight: 'bold',
                     textTransform: 'uppercase'
                 },
-            },
-            subtitle: {
-                text: 'Kartu Menuju Sehat'
             },
             xAxis: {
                 title: {

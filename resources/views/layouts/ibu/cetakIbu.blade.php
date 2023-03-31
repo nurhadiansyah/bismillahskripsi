@@ -7,8 +7,8 @@
 </head>
 <body>
     <div style="text-align: center;">
-        <h3 style="text-align: center;">DATA Ibu</h3>
-        <h1 style="text-align: center;">POSYANDU KABUPUTAEN DUA PITUE</h1>
+        <h3 style="text-align: center;">DATA IBU</h3>
+        <h1 style="text-align: center;">POSYANDU KABUPATEN SIDRAP</h1>
         <p style="text-align: center;">Semua Data</p>
         <hr>
        
@@ -74,7 +74,7 @@
         <br>
         <br>
         <br>
-    <p>yuni hartika</p>
+    <p>Suriana</p>
     </div>
     </div>
     <script type="text/javascript">

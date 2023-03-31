@@ -10,130 +10,89 @@
         <div class="card shadow mb-4">
             <div class="card-body">
                 <div class="box box-primary">    
-                    <div class="timeline-item">
-                        <h4 class="timeline-header no-border">
-                            <i class="fa fa-venus "></i>
-                            <i class="col-md-2">Nama Ibu    </i>  
-                            <i class="col-md-7">: {{ $data->nama_ibu }}</i>
-                        </h4>
-                    </div>
-                    <!-- END timeline item -->
-                    <!-- timeline item -->
-                        <div class="timeline-item">
-                            <h4 class="timeline-header no-border">
-                                <i class="fa fa-mars bg-light-blue"></i>
-                                <i class="col-md-2">Nama Ayah       </i>     
-                                <i class="col-md-7">:{{ $data->nama_suami }}</i>
-                            </h4>
-                        </div>
-                    <!-- END timeline item -->
-                    <!-- timeline item -->
-                        
-                        <div class="timeline-item">
-                            <h4 class="timeline-header no-border">
-                                <i class="fa fa-address-card bg-yellow"></i>
-                                <i class="col-md-2">Alamat</i>     
-                                <i class="col-md-7">: {{ $data->alamat }} Rt {{ $data->rt }}/Rw {{ $data->rw }} {{ $data->kecamatan }}</i>
-                                 
-                            </h4>
-                        </div>
-                    <!-- END timeline item -->
-                    <!-- timeline item -->
-                        
-                        <div class="timeline-item">
-                            <h4 class="timeline-header no-border">
-                                <i class="fa fa-scale-balanced"></i>
-                                <i class="col-md-2">Berat Badan</i>     
-                                <i class="col-md-7">:  {{ $data->bb_lahir }} Kg</i>
-                            </h4>
-                        </div>
-                    <!-- END timeline item -->
-                    <!-- timeline item -->
-                        <div class="timeline-item">
-                            <h4 class="timeline-header no-border">
-                                <i class="fa fa-ruler"></i>
-                                <i class="col-md-2">Tinggi Badan</i>     
-                                <i class="col-md-7">:  {{ $data->tb_lahir }} cm</i>
-                            </h4>
-                        </div>
-                    <!-- END timeline item -->
-                    <!-- timeline item -->
-                        
-                        <div class="timeline-item">
-                            <h4 class="timeline-header no-border">
-                                <i class="fa fa-list-ol bg-muted"></i>
-                                <i class="col-md-2">Anak Ke</i>     
-                                <i class="col-md-7">: {{ $data->anak_ke }}</i>
-                            </h4>
-                        </div>
-                    <!-- END timeline item -->
-                    <!-- timeline item -->
-                        
-                        <div class="timeline-item">
-                            <h4 class="timeline-header no-border">
-                                <i class="fa fa-hotel bg-green"></i>
-                                <i class="col-md-2">Jenis Persalinan</i>     
-                                <i class="col-md-7">: {{ $data->jenis_persalinan }}</i>
-                            </h4>
-                        </div>
-                    <!-- END timeline item -->
-                    <!-- timeline item -->
-                        
-                        <div class="timeline-item">
-                            <h4 class="timeline-header no-border">
-                                <i class="fa fa-hospital-o bg-green"></i>
-                                <i class="col-md-2">Tempat Persalinan</i>     
-                                <i class="col-md-7">:  {{ $data->tempat_persalinan }}</i>
-                            </h4>
-                        </div>
-                    <!-- END timeline item -->
-                    <!-- timeline item -->
-                        
-                        <div class="timeline-item">
-                            
-                            <h4 class="timeline-header no-border">
-                                <i class="fa fa-user-md bg-green"></i>
-                                <i class="col-md-2">Dokter</i>     
-                                <i class="col-md-7">: {{ $data->dokter }}</i>
-                            </h4>
-                        </div>
-                    <!-- END timeline item -->
-                    <!-- timeline item -->
-                        <div class="timeline-item">
-                            <h4 class="timeline-header no-border">
-                                <i class="fa fa-id-card bg-muted"></i>
-                                <i class="col-md-2">NIK :</i>     
-                                <i class="col-md-7">@if ($data->NIK_anak == null)
-                                                        Tidak Ada
-                                                    @else
-                                                        {{ $data->NIK_anak }}
-                                                    @endif</i>
-                            </h4>
-                        </div>
-                    <!-- END timeline item -->
-                    <!-- timeline item -->
-                        
-                        <div class="timeline-item">
-                            <h4 class="timeline-header no-border">
-                                <i class="fa fa-id-card bg-muted"></i>
-                                <i class="col-md-2">No. BPJS</i>     
-                                <i class="col-md-7">@if ($data->BPJS_anak == null)
-                                    Tidak Ada
-                                @else
-                                    {{ $data->BPJS_anak }}
-                                @endif</i>                    
-                            </h4>
-                        </div>
-            </div>
+                    <table>
+                        <tr>
+                          <td>Nama Ibu</td>
+                          <td>:</td>
+                          <td>{{ $data ->nama_ibu }}</td>
+                        </tr>
+                        <tr>
+                          <td>Nama Ayah</td>
+                          <td>:</td>
+                          <td>{{ $data->nama_suami }}</td>
+                          
+                        </tr>
+                        <tr>
+                          <td>Alamat</td>
+                          <td>:</td>
+                          <td>{{ $data->alamat }} Rt {{ $data->rt }}/Rw {{ $data->rw }} {{ $data->kecamatan }}</td>
+                        </tr>
+                        <tr>
+                          <td>Berat Badan</td>
+                          <td>:</td>
+                          <td>{{ $data->bb_lahir }} Kg</td>
+                        </tr>
+                        <tr>
+                          <td>Tinggi Badan</td>
+                          <td>:</td>
+                          <td>{{ $data->tb_lahir }} cm</td>
+                          
+                        </tr>
+                        <tr>
+                          <td>Tinggi Badan</td>
+                          <td>:</td>
+                          <td>{{ $data->tb_lahir }} cm</td>
+                        </tr>
+                        <tr>
+                          <td>Anak ke</td>
+                          <td>:</td>
+                          <td>{{ $data->anak_ke }}</td>
+                        </tr>
+                        <tr>
+                          <td>Jenis Persalinan</td>
+                          <td>:</td>
+                          <td>{{ $data->jenis_persalinan }}</td>
+                        </tr>
+                        <tr>
+                          <td>Tempat Persalinan</td>
+                          <td>:</td>
+                          <td>{{ $data->tempat_persalinan }}</td>
+                        </tr>
+                        <tr>
+                            <td>Dokter</td>
+                            <td>:</td>
+                            <td>{{ $data->dokter }}</td>
+                         </tr>
+                         <tr>
+                          <td>NIK</td>
+                          <td>:</td>
+                          <td>@if ($data->NIK_anak == null)
+                            Tidak Ada
+                            @else
+                            {{ $data->NIK_anak }}
+                            @endif</td>
+                        </tr>
+                        <tr>
+                          <td>No. BPJS</td>
+                          <td>:</td>
+                          <td>@if ($data->BPJS_anak == null)
+                            Tidak Ada
+                            @else
+                            {{ $data->BPJS_anak }}
+                            @endif</td>
+                        </tr>
+                      </table>
+                
+                </div>
            
             </div>
         </div>
 
         <!-- Bar Chart -->
-        <div class="card shadow mb-4">
-        </div>
+     <div class="card shadow mb-4">
+</div>
 
-    </div>
+</div>
 
     <!-- Donut Chart -->
     <div class="col-xl-4 col-lg-5">
@@ -171,7 +130,6 @@
                                 </a>
                             </li>
                         </ul>
-                        <a href="{{ route('pemakai.index') }}" class="btn btn-primary btn-block"><b>Kembali</b></a>
                     </div>
                     <!-- /.box-body -->
                 </div>
@@ -201,19 +159,19 @@
                     </thead>
                     <tbody>
                         @php $no = 1; @endphp
-                        @foreach($data1 as $datas1)
+                        @foreach($data3 as $datas3)
                         <tr>
                             <td>{{ $no++ }}</td>
-                            <td>{{ $datas1->nama_imun }}</td>
+                            <td>{{ $datas3->nama_imun }}</td>
                             <td>
                                 @php
                                     $birthDt = new DateTime($data->tgl_lhr);
-                                    $today = new DateTime($datas1->tgl_imun);
+                                    $today = new DateTime($datas3->tgl_imun);
                                     $y = $today->diff($birthDt)->y;
                                     $m = $today->diff($birthDt)->m;
                                     $d = $today->diff($birthDt)->d;
                                 @endphp
-                                @if ($datas1->tgl_imun != null)
+                                @if ($datas3->tgl_imun != null)
                                     @if ($y == 0)
                                         @if ($m < 1)
                                             {{ $m }} Bulan ({{ $d }} Hari)
@@ -235,9 +193,9 @@
                                     @endif
                                 @endif
                             </td>
-                            <td>{{ $datas1->tgl_imun }}</td>
-                            <td>{{ $datas1->booster }}</td>
-                            <td>{{ $datas1->ket_imun }}</td>
+                            <td>{{ $datas3->tgl_imun }}</td>
+                            <td>{{ $datas3->booster }}</td>
+                            <td>{{ $datas3->ket_imun }}</td>
                         </tr>
                         @endforeach
                     </tbody>
@@ -249,7 +207,7 @@
 {{-- data timbang anak --}}
 <div class="card shadow mb-1">
     <div class="card-header py-2">
-        <h6 class="m-0 font-weight-bold text-primary">Data Imunisasi</h6>
+        <h6 class="m-0 font-weight-bold text-primary">Data timbang</h6>
     </div>
         <div class="box box-primary">  
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -281,9 +239,39 @@
             </tbody>
             
         </table>
+<div class="box-header with-border">
+    <div class="card shadow mb-1">
+        <div class="card-header py-2">
+                        <h6 class="box-title">
+                            <center>
+                            <a class="m-0 font-weight-bold text-primary">
+                                Grafik Perkembangan Anak
+                            </a>
+                            </center>
+                        </h6>
+                    </div>
+                    <div >
+                        <div class="box-body">
+                            @if($data->jenis_kelamin == 1)
+                                <div id="grafik_female" style="height: 700px">
+                                    <!-- view grafik -->
+                                    {!! $chart1 !!}
+                                </div>
+                            @else
+                                <div id="grafik_male" style="height: 700px">
+                                    <!-- view grafik -->
+                                    {!! $chart1 !!}
+                                </div>
+                            @endif
+                            
+        <!-- /.box-body -->
+                        </div>
+                    </div>
     </div>
     <!-- /.box-body -->
 </div>
+    </div>
+                    
             </div>
     </div>
 </div>
@@ -302,10 +290,10 @@
         $('#example2').DataTable();
     })
 </script>
-<script type="text/javascript"> 
-         // GRAFIK MALE
+<script type="text/javascript">
+    // GRAFIK MALE
     $(function() {
-        var data_viewer = {{ Session::get('grafik') }};
+        var data_viewer = <?php echo $grafik; ?>;
 
         Highcharts.chart('grafik_male', {
             colors: ['#7cb5ec', '#f7a35c', '#90ee7e', '#7798BF', '#aaeeee', '#ff0066', '#eeaaee', '#55BF3B', '#DF5353', '#7798BF', '#aaeeee'],
@@ -313,19 +301,17 @@
                 backgroundColor: null,
             },
             title: {
-                text: 'KMS Laki-Laki',
+                text: 'Kartu Menuju Sehat (Laki-Laki)',
                 style: {
                     fontSize: '16px',
                     fontWeight: 'bold',
                     textTransform: 'uppercase'
                 },
             },
-            subtitle: {
-                text: 'Kartu Menuju Sehat'
-            },
+            
             xAxis: {
                 title: {
-                    text: 'Umur',
+                    text: 'Umur/Bulan',
                     style: {
                         textTransform: 'uppercase'
                     },
@@ -340,7 +326,7 @@
             },
             yAxis: {
                 title: {
-                    text: 'Berat Badan',
+                    text: 'Berat Badan/ Kg',
                     style: {
                         textTransform: 'uppercase'
                     },
@@ -396,7 +382,7 @@
                     21.8,22.1,22.4,22.6,22.9,
                     23.2,23.5,23.8,24.1,24.3,
                     24.6,24.9,25.2,25.5,25.8,
-                    26.1,26.4,26.7,27.0,27.3
+                    26.1,26.4,26.7,27.0,27.3,
                 ],
                 color: '#f2f200',
             },{
@@ -477,10 +463,10 @@
             }
         });
     })
-  
-     // GRAFIK FEMALE
+
+    // GRAFIK FEMALE
     $(function() {
-        var data_viewer = {{ Session::get('grafik') }};
+        var data_viewer = <?php echo $grafik; ?>;
 
         Highcharts.chart('grafik_female', {
             colors: ['#7cb5ec', '#f7a35c', '#90ee7e', '#7798BF', '#aaeeee', '#ff0066', '#eeaaee', '#55BF3B', '#DF5353', '#7798BF', '#aaeeee'],
@@ -488,16 +474,14 @@
                 backgroundColor: null,
             },
             title: {
-                text: 'KMS Perempuan',
+                text: 'Kartu Menuju Sehat (Perempuan)',
                 style: {
                     fontSize: '16px',
                     fontWeight: 'bold',
                     textTransform: 'uppercase'
                 },
             },
-            subtitle: {
-                text: 'Kartu Menuju Sehat'
-            },
+            
             xAxis: {
                 title: {
                     text: 'Umur',
@@ -651,6 +635,18 @@
                 }]
             }
         });
-    })    
-</script>    
+    })
+</script>
+<style>
+    table {
+      border-collapse: collapse;
+    }
+    
+    td, th {
+      border: 0px;
+      text-align: left;
+      padding: 5px;
+    }
+    
+    </style>
 @endsection

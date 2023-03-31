@@ -21,8 +21,8 @@
                 <th style="width:5% ;text-align:center">No</th>
                 <th style="width:27% ;text-align:center">Nama</th>
                 <th style="width:27% ;text-align:center">Email</th>
-                <th style="width:20%; text-align:center">password</th>
-                <th style="width:26% ;text-align:center">Level</th>
+                <th style="width:20%; text-align:center">Level</th>
+                <th style="width:26% ;text-align:center">password</th>
                 <th style="width:15% ;text-align:center">Aksi</th>
             </tr>
         </thead>
