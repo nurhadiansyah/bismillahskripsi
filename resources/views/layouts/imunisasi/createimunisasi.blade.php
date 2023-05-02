@@ -14,7 +14,7 @@
                             <select class="form-control select2 " name="id_anak" style="width: 100%;" required>
                                 <option selected="selected" value="">-- Nama Anak --</option>
                                 @foreach($data as $datas)
-                                    <option value="{{ $datas->id_anak }}">{{ $datas->nama_anak }} - {{ $datas->nama_ibu }} & {{ $datas->nama_suami }}</option>
+                                    <option style="text-transform: capitalize" value="{{ $datas->id_anak }}">{{ $datas->nama_anak }} - {{ $datas->nama_ibu }} & {{ $datas->nama_suami }}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -29,7 +29,7 @@
                             <span class="input-group-text"><i class="fa fa-child"></i></span>
                             <select class="form-control select2" name="id_j_imun[]" multiple="multiple" data-placeholder="Nama Imunisasi" style="max-width: 100%">
                                 @foreach($data2 as $datas2)
-                                    <option value="{{ $datas2->id_j_imun }}">{{ $datas2->nama_imun }}</option>
+                                    <option style="text-transform: capitalize" value="{{ $datas2->id_j_imun }}">{{ $datas2->nama_imun }}</option>
                                 @endforeach
                             </select>
                         </div>

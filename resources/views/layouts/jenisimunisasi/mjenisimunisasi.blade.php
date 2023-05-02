@@ -119,7 +119,7 @@
                                     @foreach($data as $datas)
                                     <tr>
                                         <td>{{ $no++ }}</td>
-                                        <td>{{ $datas->nama_imun }}</td>
+                                        <td style="text-transform: capitalize">{{ $datas->nama_imun }}</td>
                                         <td>{{ $datas->umur }} Bulan</td>
                                         <td>
                                             <form action="{{ route('Jimunisasi.destroy', $datas->id_j_imun) }}" method="post">

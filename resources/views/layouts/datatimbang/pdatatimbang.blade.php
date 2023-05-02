@@ -104,13 +104,13 @@
 							@foreach($data2 as $datas2)
 							<tr>
 								<td>{{ $no++ }}</td>
-								<td>{{ $datas2->nama_anak }}</td>
+								<td style="text-transform: capitalize">{{ $datas2->nama_anak }}</td>
 								<td>{{ $datas2->umur }} Bulan</td>
 								<td>
 									{{ $datas2->berat_badan }} Kg/{{ $datas2->tinggi_badan }} cm
 								</td>
 								<td>{{ $datas2->tgl_timbang }}</td>
-								<td>{{ $datas2->status_gizi }}</td>
+								<td style="text-transform: capitalize">{{ $datas2->status_gizi }}</td>
 								<td>{{ $datas2->tindakan }}</td>
 								<td>
 									<form action="{{ route('tanak.destroy', $datas2->id_timbang) }}" method="post">

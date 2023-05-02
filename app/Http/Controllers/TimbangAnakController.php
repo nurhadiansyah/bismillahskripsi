@@ -1623,6 +1623,7 @@ class TimbangAnakController extends Controller
         $data->berat_badan  = $request->get('berat_badan');
         $data->tinggi_badan = $request->get('tinggi_badan');
         $data->tgl_timbang  = $request->get('tgl_timbang');
+        $data->tindakan     = $request->get('tindakan');
 
         //////////Umur
         $id = $request->get('id_anak');
@@ -2854,13 +2855,13 @@ class TimbangAnakController extends Controller
         $ct_count = Timbang::where('id_anak', $id)->count();
         if ($ct_count > 2) {
             $ct = DB::table('timbangs')
-                ->where('id_anak', $id_a)
+                ->where('id_anak', $id)
                 ->orderBy('tgl_timbang', 'desc')
                 ->offset(1)
                 ->limit(1)
                 ->first();
             $ct1 = DB::table('timbangs')
-                ->where('id_anak', $id_a)
+                ->where('id_anak', $id)
                 ->orderBy('tgl_timbang', 'desc')
                 ->offset(2)
                 ->limit(1)
@@ -2890,10 +2891,24 @@ class TimbangAnakController extends Controller
         }
         // dd($t_bln_now, $temp_t_bln, $aaa);
         $data->ket_timbang = $ket_t;
+        // $timbang = new Timbang;
+        // $timbang = Timbang::create([
+        //     'id_anak' => $data-> id_anak,
+        //     'tinggi_badan' => $data->tinggi_badan,
+        //     'berat_badan' => $data->berat_badan,
+        //     'umur' => $data->umur,
+        //     'tgl_timbang' => $data->tgl_timbang,
+        //     'ket_timbang' => $data->ket_timbang,
+        //     'ind_naik' => $data->ind_naik,
+        //     'ind_t_lalu' => $data->ind_t_lalu,
+        //     'ind_b_lalu' => $data->ind_b_lalu,
+        //     'status_gizi' => $q,
+        //     'tindakan' => $data->tindakan
+        // ]);
         ////////Ket Timbang End
         $data->save();
 
-        return redirect()->route('tanak.create')->with(['success' => 'Data Berhasil Di Update']);
+        return redirect()->route('tanak.index')->with(['success' => 'Data Berhasil Di Update']);
     }
 
     /**
@@ -2906,6 +2921,6 @@ class TimbangAnakController extends Controller
     {
         $data = Timbang::where('id_timbang', $id)->first();
         $data->delete();
-        return redirect()->route('tanak.create')->with(['success' => 'Data Berhasil Di Hapus']);
+        return redirect()->route('tanak.index')->with(['success' => 'Data Berhasil Di Hapus']);
     }
 }

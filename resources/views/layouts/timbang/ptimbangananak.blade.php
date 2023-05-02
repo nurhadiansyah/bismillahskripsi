@@ -28,7 +28,7 @@
                                     <select class="form-control select2" name="id_anak" " required>
                                         <option selected="selected" value="">-- Nama Anak --</option>
                                         @foreach($dataCreate as $datas)
-                                            <option value="{{ $datas->id_anak }}"> {{ $datas->nama_anak }} - {{ $datas->nama_ibu }} & {{ $datas->nama_suami }} </option>
+                                            <option style="text-transform: capitalize" value="{{ $datas->id_anak }}"> {{ $datas->nama_anak }} - {{ $datas->nama_ibu }} & {{ $datas->nama_suami }} </option>
                                         @endforeach
                                     </select>
                                 </div>

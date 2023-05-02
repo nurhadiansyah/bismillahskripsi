@@ -14,9 +14,9 @@
                             <div class="input-group-prepend col-md-20">
                                 <span class="input-group-text"><i class="fa fa-venus-mars"></i></span>
                                 <select class="form-control" name="id" style="width: 100%;" required>
-                                    <option selected="selected" value="">-- Nama Ibu --</option>
+                                    <option style="text-transform: capitalize" selected="selected" value="">-- Nama Ibu --</option>
                                     @foreach($data as $datas)
-                                        <option value="{{ $datas->id }}">{{ $datas->nama_ibu }} - {{ $datas->nama_suami }}</option>
+                                        <option  value="{{ $datas->id }}" style="text-transform: capitalize">{{ $datas->nama_ibu }} - {{ $datas->nama_suami }}</option>
                                     @endforeach
                                 </select>
                             </div>

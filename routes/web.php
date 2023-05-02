@@ -34,6 +34,7 @@ Route::get('/', function () {
     return view('layouts/login/login');
 });
 
+
 //master data penjalur
 Route::get('masterdataibu', function () { return view('layouts.ibu.mdataibu');});
 Route::get('masterdataanak', function () { return view('layouts.anak.mdataanak');});
