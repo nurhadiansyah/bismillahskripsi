@@ -18,48 +18,6 @@ class PemakaiController extends Controller
      */
     public function index()
     {   
-        // $id = Auth::user()->id;
-        // $dataumum = DB::table('dataanaks as A')
-        //         ->leftjoin('users as I', 'A.id_ibu', '=', 'I.id')
-        //         ->where('id_ibu','=',$id)
-        //         ->orderBy('nama_anak', 'asc')
-        //         ->get();
-
-        
-        // return view('layouts.pemakai.dataanak.mdataanak', compact('dataumum'));
-        // return view('layouts.pemakai.dataanak.masteruser', compact('data'));
-        // $id = Auth::user()->id;
-        // $dataumum = DB::table('dataanaks as A')
-        //         ->leftjoin('users as I', 'A.id_ibu', '=', 'I.id')
-        //         ->where('id_ibu', $id)
-        //         ->orderBy('nama_anak', 'asc')
-        //         ->get();
-
-        //         // dd($dataumum);
-        // $data = DB::table('dataanaks as A')
-        // ->leftjoin('users as I', 'A.id_ibu','=','I.id' )
-        // ->where('A.id_ibu', $id)
-        // ->first();
-
-        // // dd($data);
-       
-        // $data1 = DB::table('dataanaks as A')
-        //         ->leftjoin('imunisasi as M', 'A.id_anak', '=', 'M.id_anak')
-        //         ->leftjoin('jenisimunisasi as J', 'M.id_j_imun', '=', 'J.id_j_imun')
-        //         ->where('A.id_anak', $id)->get();
-        // // Grafik umur 1 - 24 bulan
-        // $t = DB::table('dataanaks as A')
-        //         ->leftjoin('timbangs as T', 'A.id_anak', '=', 'T.id_anak')
-        //         ->select('A.id_anak', 'A.nama_anak', 'T.umur', 'T.berat_badan', 'T.tinggi_badan', 'T.tgl_timbang')
-        //         ->where('A.id_anak', $id)
-        //         ->get();
-        // $data2 = DB::table('timbangs as T')
-        //         ->leftjoin('dataanaks as A', 'T.id_anak', '=', 'A.id_anak')
-        //         ->where('A.id_anak', $id)
-        //         ->get();
-        
-        // return view('layouts.pemakai.dataanak.viewank', compact('dataumum', 'data', 'data1','data2'));
-
         $id = Auth::user()->id;
         $dataumum = DB::table('dataanaks as A')
                 ->leftjoin('users as I', 'A.id_ibu', '=', 'I.id')
