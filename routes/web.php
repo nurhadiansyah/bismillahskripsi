@@ -73,12 +73,4 @@ Route::resource('pemakai', PemakaiController::class);
 Route::resource('dashboard', DashboardController::class);
 Route::resource('Kms', KmsController::class);
 
-// Route::get('/pemakai/{id}', function ($id) {
-//     return view
-// });
 
-// Route::get('dashboard', function () { return view('layouts.dasboard.dasboard');});
-
-// route untuk cetak
-
-// Route::get('cetakanak','DataAnakController@CetakAnak')->name('cetakanak');
